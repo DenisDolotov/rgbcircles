@@ -89,6 +89,13 @@ public class GameManager {
     }
 
     private void gameEnd() {
+        String text;
+        if (circles.isEmpty()) {
+            text = "YOU WIN!";
+        } else {
+            text = "YOU LOSE!";
+        }
+        canvasView.showMessage(text);
         mainCircle.initRadius();
         initEnemyCircles();
         canvasView.redraw();
