@@ -22,4 +22,12 @@ public class MainCircle extends SimpleCircle{
     public SimpleCircle getCircleArea() {
         return new SimpleCircle(getX(),getY(),getRadius()*3);
     }
+
+    public void initRadius() {
+        radius = INIT_RADIUS;
+    }
+
+    public void growRadius(EnemyCircle circle) {
+        radius = (int) Math.sqrt(Math.pow(radius, 2) + Math.pow(circle.radius, 2));
+    }
 }
